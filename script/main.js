@@ -4,16 +4,17 @@ import { addTask, getTask } from "./functions.js";
 import { createStorage, getStorage } from "./storage.js";
 
 window.onload = function() {
-    console.log(getStorage());
+    for(let element of getStorage()) {
+        const LI = createNewTask(element.task);
+        TASK_LIST.appendChild(LI);
+    }
 }
-
 
 SUBMIT_BUTTON.addEventListener("click", () => {
     const TASK = getTask(NEW_TASK);
     const LI = createNewTask(TASK);
     TASK_LIST.appendChild(LI); 
     const TASKS = getStorage();
-    console.log(TASKS);
-
+    createStorage(addTask(TASK, TASKS));
 });
 
