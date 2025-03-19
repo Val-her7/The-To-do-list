@@ -5,16 +5,17 @@ import { createStorage, getStorage } from "./storage.js";
 
 window.onload = function() {
     for(let element of getStorage()) {
-        const LI = createNewTask(element.task);
+        const LI = createNewTask(element.task, element.id);
         TASK_LIST.appendChild(LI);
     }
 }
 
 SUBMIT_BUTTON.addEventListener("click", () => {
-    const TASK = getTask(NEW_TASK);
-    const LI = createNewTask(TASK);
-    TASK_LIST.appendChild(LI); 
+    const TASK = getTask(NEW_TASK); 
     const TASKS = getStorage();
-    createStorage(addTask(TASK, TASKS));
+    const { tasks, newtask} = addTask(TASK, TASKS);
+    createStorage(tasks);
+    const LI = createNewTask(TASK, newtask.id);
+    TASK_LIST.appendChild(LI);
 });
 
