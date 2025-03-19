@@ -11,4 +11,5 @@ export function addTask(task, tasks) {
         completed: false,
     }
     tasks.push(NEWTASK);
+    return tasks;
  }
