@@ -1,0 +1,21 @@
+.footer {
+    background-color: bisque;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    bottom: 0px;
+}
+
+.footer__quote {
+    background-color: brown;
+    color: white;
+    width: 50vw;
+    margin: auto;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.footer__quote-p {
+    font-style: italic;
+    margin: 5px;
+}
